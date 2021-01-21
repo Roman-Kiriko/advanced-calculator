@@ -1,0 +1,15 @@
+{
+  "name": "calculator-for-measurer",
+  "version": "1.0.0",
+  "description": "this is advanced calculator for company OKNATENT",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "Tata"
+  ],
+  "author": "Roman Vilkov <aurimcreo@gmail.com>",
+  "license": "ISC"
+}

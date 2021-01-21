@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Cache-Control" content="private">
+    <meta name="referrer" content="strict-origin" />
+
+    <title>Калькулятор мягких окон</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./scss/index.css">
+
+    <script src="https://use.fontawesome.com/526ead2a73.js"></script>
+</head>
+
+<body>
+    <div class="cube-loading" id="preloader">
+        <div class="caption">
+            <div class="cube-loader">
+                <div class="cube loader-1"></div>
+                <div class="cube loader-2"></div>
+                <div class="cube loader-4"></div>
+                <div class="cube loader-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator">
+        <div class="container">
+            <div class="calculator__title">
+
+
+                <h1 class="text-center m-5">Калькулятор мягких окон</h1>
+            </div>
+            <form action="" id="form" class="needs-validation">
+                <div class="form ">
+                    <!-- Блок с избражением -->
+                    <div class="form__product-wrapper ">
+                        <div class="form__product">
+
+                            <div class="form__product-image text-center">
+                                <div class="form__product-image-wrapper" style="position: relative;">
+                                    <img src="./img/calculator/window-white.jpg" alt="Soft window" class="img-fluid">
+                                </div>
+
+                                <div class="form__product-height">
+                                    <input type="text" id="height" placeholder="Высота, мм" data-type="main"
+                                        pattern="\d+">
+                                </div>
+                                <div class="form__product-width">
+                                    <input type="text" id="width" placeholder="Ширина, мм" data-type="main"
+                                        pattern="\d+">
+                                </div>
+                                <div class="form__product-diagonal-left">
+                                    <input type="text" id="diagonal-left" placeholder="Диагональ" data-type="main"
+                                        pattern="\d+">
+                                </div>
+                                <div class="form__product-diagonal-right">
+                                    <input type="text" id="diagonal-right" placeholder="Диагональ" data-type="main"
+                                        pattern="\d+">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Блок технической информации  -->
+                    <div class="form__tech-info">
+                        <table id="table" class="table table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span>Заполнение проема</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="text-nowrap">
+                                            <select name="" id="fillingAperture" class="w-200">
+                                                <option value="PVH700">Пленка 700 мкр</option>
+                                                <option value="PLR">Полиуретан PU</option>
+                                                <option value="OKCF">Оксфорд</option>
+                                                <option value="PVH650">ПВХ материал</option>
+                                                <option value="BRZ">Брезент</option>
+                                                <option value="MSK">Москитная сетка</option>
+                                            </select>
+                                            <i class="fa fa-question-circle" data-icon="fill"></i>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div  class="text-center">
+                                            <span class="area-output">
+                                                0
+                                            </span><span> м<sup>2</sup></span>
+                                        </div>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span class="area-filling">0</span><span> руб.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Материал окантовки</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="text-nowrap">
+                                            <select name="materialEdging" id="material-edging" class="w-200">
+                                                <option value="PVH50">Ткань ПВХ 50мм</option>
+                                                <option value="PVH80">Ткань ПВХ 51-80мм</option>
+                                                <option value="PVH150">Ткань ПВХ 81-150мм</option>
+                                                <option value="OKCF50">Оксфорд 50мм</option>
+                                                <option value="OKCF80">Оксфорд 51-80мм</option>
+                                                <option value="OKCF150">Оксфорд 81-150мм</option>
+                                                <option value="BRZ50">Брезент 50мм</option>
+                                                <option value="BRZ80">Брезент 51-80мм</option>
+                                                <option value="BRZ150">Брезент 80-150мм</option>
+                                            </select>
+                                            <i class="fa fa-question-circle" data-icon="edging"></i>
+                                        </div>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span class="perimeter-output">
+                                            0
+                                        </span><span> м.п.</span>
+                                    </td>
+                                    <td  class="text-center">
+                                         <span class="perimetr-edging">0</span><span> руб.</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Цвет окантовки</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="text-nowrap">
+                                            <select name="colorEdging" id="colorEdging" class="w-200">
+                                                <option value="white">Белый</option>
+                                                <option value="brown">Коричневый</option>
+                                                <option value="green">Зеленый</option>
+                                                <option value="blue">Синий</option>
+                                                <option value="beige">Бежевый</option>
+                                            </select>
+                                            <i class="fa fa-question-circle" data-icon="color"></i>
+                                        </div>
+                                    </td>
+                                    <td colspan="2">
+    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="form__tech-info-mount-title text-center ">
+                                            <h4>Крепление окна</h4>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form__tech-info-mount-block-title ">Верх</div>
+                                    </td>
+                                    <td  >
+                                        <table id="table-2" class="ml-auto">
+                                            <tr >
+                                                <td class="p-0">
+                                                    <div class="text-nowrap">
+                                                        <select name="mountSelect" id="top-mount">
+                                                            <option value="none">Нет</option>
+                                                            <option value="s">D-27(Скоба/ремешок)</option>
+                                                            <option value="b">D-42(Пов.большая скоба)</option>
+                                                            <option value="fg">D-17(Франц.замок латунь)</option>
+                                                            <option value="fn">D-17(Франц. замок никель)</option>
+                                                            <option value="d">D-12(Люверс несъемный)</option>
+                                                            <option value="ft">D-17(Франц.замок высокий)</option>
+                                                            <option value="d-40">D-40(Люверс)</option>
+                                                            <option value="d-10m">D-12(Люверс) + Трос</option>
+                                                            <option value="rr-r">Раздвижные элементы</option>
+                                                        </select>
+                                                        <i class="fa fa-question-circle" data-icon="mount"></i>
+                                                    </div>
+                                                </td>
+                                                <td class="p-0 pl-1">
+                                                    <input type="text" style="width: 5em;" class="text-center" id="input-top-mount" placeholder="шт.">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="mount-top-output">
+                                            0
+                                        </span><span> шт.</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="mount-top-price" data-output>
+                                            0
+                                        </span><span> руб.</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form__tech-info-mount-block-title ">Правая сторона</div>
+                                    </td>
+                                    <td class="text-right">
+                                        <table id="table-2" class="ml-auto">
+                                            <tr >
+                                                <td class="p-0">
+                                                    <div class="text-nowrap">
+                                                        <select name="mountSelect" id="right-mount">
+                                                            <option value="none">Нет</option>
+                                                            <option value="s">D-27(Скоба/ремешок)</option>
+                                                            <option value="b">D-42(Пов.большая скоба)</option>
+                                                            <option value="fg">D-17(Франц.замок латунь)</option>
+                                                            <option value="fn">D-17(Франц. замок никель)</option>
+                                                            <option value="d">D-12(Люверс несъемный)</option>
+                                                            <option value="ft">D-17(Франц.замок высокий)</option>
+                                                            <option value="d-40">D-40(Люверс)</option>
+                                                        </select>
+                                                        <i class="fa fa-question-circle" data-icon="mount"></i>
+                                                    </div>
+                                                </td>
+                                                <td class="p-0 pl-1">
+                                                    <input type="text" style="width: 5em;" class="text-center" id="input-right-mount" placeholder="шт.">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="mount-right-output">
+                                            0
+                                        </span><span> шт.</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="mount-right-price" data-output>
+                                            0
+                                        </span><span> руб.</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form__tech-info-mount-block-title ">Левая сторона</div>
+                                    </td>
+                                    <td class="text-right">
+                                        <table id="table-2" class="ml-auto">
+                                            <tr >
+                                                <td class="p-0">
+                                                    <div class="text-nowrap">
+                                                        <select name="mountSelect" id="left-mount">
+                                                            <option value="none">Нет</option>
+                                                            <option value="s">D-27(Скоба/ремешок)</option>
+                                                            <option value="b">D-42(Пов.большая скоба)</option>
+                                                            <option value="fg">D-17(Франц.замок латунь)</option>
+                                                            <option value="fn">D-17(Франц. замок никель)</option>
+                                                            <option value="d">D-12(Люверс несъемный)</option>
+                                                            <option value="ft">D-17(Франц.замок высокий)</option>
+                                                            <option value="d-40">D-40(Люверс)</option>
+                
+                                                        </select>
+                                                        <i class="fa fa-question-circle" data-icon="mount"></i>
+                                                    </div>
+                                                </td>
+                                                <td class="p-0 pl-1">
+                                                    <input type="text" style="width: 5em;" class="text-center" id="input-left-mount" placeholder="шт.">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="mount-left-output">
+                                            0
+                                        </span><span> шт.</span>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span class="mount-left-price" data-output>
+                                            0
+                                        </span><span> руб.</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form__tech-info-mount-block-title ">Низ</div>
+                                    </td>
+                                    <td class="text-right">
+                                        <table id="table-2" class="ml-auto">
+                                            <tr >
+                                                <td class="p-0">
+                                                    <div class="text-nowrap">
+                                                        <select name="mountSelect" id="bottom-mount">
+                                                            <option value="none">Нет</option>
+                                                            <option value="s">D-27(Скоба/ремешок)</option>
+                                                            <option value="b">D-42(Пов.большая скоба)</option>
+                                                            <option value="fg">D-17(Франц.замок латунь)</option>
+                                                            <option value="fn">D-17(Франц. замок никель)</option>
+                                                            <option value="d">D-12(Люверс несъемный)</option>
+                                                            <option value="ft">D-17(Франц.замок высокий)</option>
+                                                            <option value="d-40">D-40(Люверс)</option>
+                                                            <option value="ky">Карман с утяжелителем</option>
+                                                        </select>
+                                                        <i class="fa fa-question-circle" data-icon="mount"></i>
+                                                    </div>
+                                                </td>
+                                                <td class="p-0 pl-1">
+                                                    <input type="text" style="width: 5em;" class="text-center" id="input-bottom-mount" placeholder="шт.">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="mount-bottom-output">
+                                            0
+                                        </span><span> шт.</span>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span class="mount-bottom-price" data-output>
+                                            0
+                                        </span><span> руб.</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="stepInput">Шаг крепления:</label>
+                                    </td>
+                                    <td  class="text-right">
+                                        <div class="form__tech-info-mount-step-title col-md">
+                                            <input type="text" id="stepInput" class="w-200 mr-0 ml-auto" data-type="main"
+                                                placeholder="мм.">
+                                        </div>
+                                    </td>
+                                    <td colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ремни для скручивания
+                                    </td>
+                                    <td  class="text-right">
+                                        <div class="form__tech-info-moutn-belts-select">
+                                            <input type="text" id="beltsInput" class="w-200 mr-0 ml-auto" data-type="main"
+                                                placeholder="шт.">
+                                            <select name="" id="belts-select" class="w-200">
+                                                <option value="belts-pr">Ремень с пряжкой</option>
+                                                <option value="belts-pvh">Ремень из пленки</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td colspan="2"  class="text-center">
+                                        <span id="belts-price" data-output>
+                                            0
+                                        </span><span> руб.</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Наличие двери
+                                    </td>
+                                    <td class="text-right">
+                                        <input type="checkbox" id="doorPresence" >
+                                    </td>
+                                    <td colspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Заполнение двери
+                                    </td>
+                                    <td class="text-right">
+                                        <select  name="" id="filling-door" class="w-200">
+                                            <option value="PLR">Полиуретан PU</option>
+                                            <option value="PVH700">Пленка 700 мкр</option>
+                                            <option value="OKCF">Оксфорд</option>
+                                            <option value="PVH650">ПВХ материал</option>
+                                            <option value="BRZ">Брезент</option>
+                                            <option value="MSK">Москитная сетка</option>
+                                        </select>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td class="text-center">
+                                        <span id="price-door" data-output>
+                                            0
+                                        </span><span> руб.</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Количество молний
+                                    </td>
+                                    <td>
+                                        <input type="number" min="1" max="2" class="w-200 mr-0 ml-auto" id="zipper" data-type="door"
+                                            placeholder="шт." value="2">
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="length-zipper-output">
+                                            0
+                                        </span><span> м.п.</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span id="zipper-price" data-output>
+                                            0
+                                        </span><span> руб.</span> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ширина двери:
+                                    </td>
+                                    <td>
+                                        <input type="text" id="doorWidth" class="w-200 mr-0 ml-auto" data-type="door" placeholder="мм." >
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="area-door-output">
+                                            0
+                                        </span><span> м<sup>2</sup></span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span id="area-door-price" data-output>
+                                            0
+                                        </span><span> руб.</span> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot style="border: 2px solid black;">
+                                <tr>
+                                    <td colspan="2">
+                                        Стоимость изделия
+                                    </td>
+                                    <td colspan="2" class="text-center">
+                                        <div class="calculator__output-price-block-product-output" data-output>
+                                            0
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Стоимость монтажа
+                                    </td>
+                                    <td colspan="2" class="text-center">
+                                        <div class="calculator__output-price-block-price-mount-output" data-output>
+                                            0
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        Стоимость доставки
+                                    </td>
+                                    <td class="text-right"><span class="delivery-output"></span><span> км. от МКАД</span></td>
+                                    <td colspan="2" class="text-center">
+                                        <div class="calculator__output-price-block-price-delivery-output" data-output>
+                                            0
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Общая стоимость
+                                    </td>
+                                    <td colspan="2" class="text-center">
+                                        <div class="calculator__output-price-block-price-output" >
+                                            0
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+
+                    <!-- Блок ввода комментария -->
+                    <div class="form__note">
+                        <!-- <textarea name="note" id="form-textarea" placeholder="Поле для комментария"></textarea> -->
+
+                        <div class="form__note-tech-info">
+                            <div class="form__note-tech-info-discount">
+                                <input type="text" id="discount" name="discount" placeholder="Скидка">
+                            </div>
+                            <div class="form__note-tech-info-zamer">
+                                <input type="checkbox" id="zamer" name="zamer">
+                                <label for="zamer">Замер</label>
+                            </div>
+                            <div class="form__note-tech-info-mounting">
+                                <input type="checkbox" id="mounting" name="Mounting">
+                                <label for="mounting">Монтаж</label>
+                            </div>
+                            <div class="form__note-tech-info-delivery" >
+                                <input type="checkbox" name="Delivery" id="delivery">
+                                <label for="delivery">Доставка</label>
+                           </div>
+                            <div  style="padding-top: 1rem;">
+                                <input type="text" name="km" id="delivery-km" placeholder="км. от МКАД">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Кнопка "Добавить к расчету" -->
+                <div class="btn__add row center m-3">
+                    <button type="button" class="btn btn-success m-auto" data-btn="addCalc">Добавить к расчету</button>
+                </div>
+            </form>
+            <div id="add-product-output"></div>
+        </div>
+    </div>
+        <template id="add-product">
+            <div class="product-wrapper">
+                <div class="product-btn-remove"></div>
+                <div class="product-info">
+                    <div class="th">
+                        <div class="product-size ">Размеры (ВхШ) </div>
+                        <div class="product-area ">Пленка </div>
+                        <div class="product-edging ">Материал окантовки </div>
+                        <div class="product-color ">Цвет окантовки</div>
+                        <div class="product-price ">Цена за изделие </div>
+                    </div>
+
+                    <div class="tr">
+                        <div class="product-size-output"></div>
+                        <div class="product-area-output"></div>
+                        <div class="product-edging-output"></div>
+                        <div class="product-color-output"></div>
+                        <div class="product-price-output"></div>
+                    </div>
+                
+                </div>
+                <div class="id-product"></div>
+                <button class="btn btn-success m-3 product-send-print">Отправить на печать</button>
+            </div>
+            
+        </template>
+
+    <script src="./tata-master/dist/tata.js"></script>
+    <script type="module" src="./src/index.js"></script>
+</body>
+
+</html>

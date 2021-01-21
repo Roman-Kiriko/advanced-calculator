@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="879d7ce9-6b78-431c-82d4-dca8fb0dc61f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/calculator-for-measurer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/calculator/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/calculator/measure-list.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/calculator/window-beige.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/calculator/window-blue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/calculator/window-brown.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/calculator/window-green.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/calculator/window-white.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/Oxford-001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/PVC-001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/PVC-400g.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/PVC-500.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/PVC-600g.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/PVC-700.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/d-40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/luvers-001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/okantovka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/poliuretan-001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/remen-001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/skoba-001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/zamok-001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/zamok-gold.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/popup-img/edging/zamok-silver.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/calculate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mount-price/MountPrice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/popup/popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/product/product-add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utills.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/variables.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1nOOoiAmnwFtI1ShygzpLyt12gR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="879d7ce9-6b78-431c-82d4-dca8fb0dc61f" name="Default Changelist" comment="" />
+      <created>1611257850533</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611257850533</updated>
+      <workItem from="1611257851689" duration="664000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

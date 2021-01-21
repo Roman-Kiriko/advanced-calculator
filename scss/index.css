@@ -1,0 +1,520 @@
+/* Общие классы */
+.j-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.w-200 {
+  width: 200px;
+}
+
+.success-form {
+  min-width: 300px;
+  left: 25%;
+  bottom: 140%;
+  width: 50%;
+  height: 89px;
+  background: honeydew;
+  border: 4px solid green;
+  border-radius: 10px;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  font-size: 24px;
+  color: forestgreen;
+  font-weight: 600;
+}
+
+.error-form {
+  min-width: 300px;
+  left: 25%;
+  bottom: 140%;
+  width: 50%;
+  height: 89px;
+  background: rgb(255, 240, 240);
+  border: 4px solid rgb(128, 0, 0);
+  border-radius: 10px;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  font-size: 24px;
+  color: rgb(139, 34, 34);
+  font-weight: 600;
+}
+
+@media screen and (max-width: 570px) {
+  .error-form,
+  .success-form {
+    left: 5%;
+  }
+}
+
+/* --- */
+
+.img-fluid {
+  width: 80%;
+}
+
+.calculator__price {
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  height: 100px;
+  margin-left: auto;
+  margin-bottom: 40px;
+  background: rgba(255, 0, 0, 0.3);
+  border: 3px solid red;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.form {
+  display: grid;
+  grid-template:
+    "img note"
+    "info info";
+  gap: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .form {
+    display: block;
+  }
+}
+
+.form__product-wrapper {
+  grid-area: img;
+}
+
+.form__product-image {
+  position: relative;
+}
+
+.form__product-width,
+.form__product-height,
+.form__product-diagonal-left,
+.form__product-diagonal-right {
+  position: absolute;
+}
+
+.form__product-width input,
+.form__product-height input,
+.form__product-diagonal-left input,
+.form__product-diagonal-right input {
+  width: 120px;
+  text-align: center;
+  height: 50px;
+}
+
+.form__product-height {
+  top: 45%;
+  left: -5%;
+}
+
+.form__product-width {
+  bottom: 0;
+  left: 41%;
+  margin-bottom: 10px;
+}
+
+.form__product-diagonal-left {
+  left: 30%;
+  top: 59%;
+  transform: rotate(-39deg);
+}
+.form__product-diagonal-right {
+  right: 30%;
+  bottom: 32%;
+  transform: rotate(39deg);
+}
+
+.form__tech-info {
+  grid-area: info;
+  padding: 20px 15px;
+}
+
+#table {
+  width: 100%;
+}
+
+.form__btn {
+  grid-area: btn;
+  text-align: center;
+  position: relative;
+}
+
+.form__tech-info-edging-material,
+.form__tech-info-filling,
+.form__tech-info-enging-color {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: 1fr;
+  margin: 10px;
+}
+
+select {
+  padding: 5px;
+}
+
+.calculator__output-price-block {
+  grid-area: out;
+}
+
+.calculator__output-price-title {
+  font-size: 36px;
+}
+
+.calculator__output-price-block .col-md {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  border: 2px solid black;
+  text-align: center;
+}
+.calculator__output-price-block-one,
+.calculator__output-price-block-two {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator__output-price-block-one {
+  width: 50%;
+}
+
+#doorPresence {
+  width: 30px;
+  height: 30px;
+}
+
+.form__note {
+  grid-area: note;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+#form-textarea {
+  width: 100%;
+  padding: 20px;
+  height: 150px;
+  resize: none;
+}
+
+.form__note-tech-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__note-tech-info-discount {
+  margin-bottom: 20px;
+}
+
+.form__note-tech-info-mounting {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form__note-tech-info-mounting #mounting,
+.form__note-tech-info-delivery #delivery,
+.form__note-tech-info-zamer #zamer {
+  height: 20px;
+  width: 20px;
+}
+
+.form__note-tech-info-mounting > label,
+.form__note-tech-info-delivery > label,
+.form__note-tech-info-zamer > label {
+  font-size: 21px;
+}
+
+.form__data {
+  grid-area: data;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background: rgba(120, 222, 138, 1);
+  background: linear-gradient(
+    to right,
+    rgba(120, 222, 138, 1) 0%,
+    rgba(120, 222, 138, 0.97) 9%,
+    rgba(111, 229, 93, 0.78) 61%,
+    rgba(111, 229, 93, 0.65) 96%
+  );
+  border-radius: 10px;
+}
+
+/* Попап */
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 250px);
+  width: 500px;
+  background: #c7eeff;
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.2),
+    0 9px 46px 8px rgba(0, 0, 0, 0.2), 0 11px 15px -7px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  padding-top: 40px;
+  z-index: 10;
+  cursor: auto;
+  border-radius: 2px;
+}
+.popup img {
+  align-self: center;
+  justify-self: center;
+}
+
+.close-popup {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.close-popup:hover {
+  transform: rotate(180deg);
+  transition: 0.4s ease-in transform;
+}
+
+.fa {
+  cursor: pointer;
+  color: #f44336;
+  font-size: 22px !important;
+}
+
+/* Карточка расчета */
+.id-product {
+  display: none;
+}
+
+.product-wrapper {
+  position: relative;
+  width: 670px;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 1px 1px 10px green;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product-info {
+  display: table;
+}
+.product-info .th {
+  display: table-header-group;
+  font-weight: bold;
+}
+.product-info .tr {
+  display: table-row-group;
+}
+
+.product-info > .th > div,
+.product-info > .tr > div {
+  display: table-cell;
+  padding: 20px;
+  border: 1px solid grey;
+  border-right: none;
+}
+.product-info > .th > div:last-child,
+.product-info > .tr > div:last-child {
+  border: 1px solid grey;
+}
+
+.product-btn-remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border: 2px solid #e62f57;
+  border-radius: 50%;
+}
+
+.product-btn-remove:before,
+.product-btn-remove:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 4px;
+  width: 13px;
+  height: 2px;
+  background: #e62f57;
+}
+
+.product-btn-remove:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.product-btn-remove:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* Адаптивность */
+
+@media screen and (max-width: 768px) {
+  .form__product-height,
+  .form__product-width,
+  .form__product-diagonal-left,
+  .form__product-diagonal-right {
+    position: static;
+  }
+
+  .form__product-height input,
+  .form__product-width input,
+  .form__product-diagonal-left input,
+.form__product-diagonal-right input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .form__product-diagonal-left,
+.form__product-diagonal-right {
+    transform: rotate(0);
+}
+
+  .form__note {
+    flex-wrap: wrap;
+  }
+
+  .form__note-tech-info {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .form__data {
+    flex-direction: column;
+  }
+}
+
+/* Конец */
+
+/* Лоадер */
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  z-index: 1001;
+}
+
+.cube-loading {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.cube-loader {
+  width: 73px;
+  height: 73px;
+  margin: 0 auto;
+  margin-top: 49px;
+  position: relative;
+  transform: rotateZ(45deg);
+}
+
+.cube {
+  position: relative;
+  transform: rotateZ(45deg);
+  width: 50%;
+  height: 50%;
+  float: left;
+  transform: scale(1.1);
+}
+
+.cube:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(52, 73, 94, 1);
+  animation: cube-loader 2.76s infinite linear both;
+  transform-origin: 100% 100%;
+}
+
+.loader-2 {
+  transform: scale(1.1) rotateZ(90deg);
+}
+
+.loader-3 {
+  transform: scale(1.1) rotateZ(180deg);
+}
+
+.loader-4 {
+  transform: scale(1.1) rotateZ(270deg);
+}
+
+.loader-2:before {
+  animation-delay: 0.35s;
+}
+
+.loader-3:before {
+  animation-delay: 0.69s;
+}
+
+.loader-4:before {
+  animation-delay: 1.04s;
+}
+
+.caption {
+  margin: 0 auto;
+}
+
+@keyframes cube-loader {
+  0%,
+  10% {
+    transform: perspective(136px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%,
+  75% {
+    transform: perspective(136px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%,
+  100% {
+    transform: perspective(136px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+.loaded_hiding #preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded #preloader {
+  display: none;
+}

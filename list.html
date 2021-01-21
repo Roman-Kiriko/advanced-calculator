@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Замерочный лист</title>
+    <link rel="stylesheet" href="scss/reset.css">
+    <style>
+@page {
+    size: 29.7cm 21cm;
+}
+body {
+    font-size: 10px;
+    font-family: Tahoma, sans-serif;
+    width: 28.7cm;
+    margin: auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 620px 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+ table {
+     border-collapse: collapse;
+     
+ }
+
+ .table {
+    grid-column: 2/3;
+    grid-row: 1/3;
+ }
+ .table table {
+     height: 600px;
+ }
+ .table table td {
+    min-height: 50px;
+ }
+ .table td, th, .header__main td {
+     vertical-align: middle;
+     border: 1px solid rgba(0, 0, 0, 0.45);
+ }
+ .grid td {
+    border: 1px solid rgba(128, 128, 128, 0.85);
+     width: 13px;
+     height: 13px;
+ }
+    </style>
+</head>
+
+<body>
+        <header style="position: relative;">
+            <div class="header__info" style="display: flex; justify-content: space-around; width: 760px;">
+                <div class="site" style="font-size: 10px;">www.oknatent.ru</div>
+                <div class="name" style="font-size: 10px;">Замерный лист по мягким окнам</div>
+            </div>
+            <div class="header__main" style="width: 910px;">
+                <table style="text-align: center;">
+                    <tr>
+                        <td colspan="5" style="height: 20px;"><div style="font-size: 10px;">Заказ-эскиз. Приложение №1.1 к Договору № ________________________ от /_______/______________202___г./Замер №_________</div></td>
+
+                    </tr>
+                    <tr>
+                        <td style="font-size: 10px; width: 200px; height: 15px; ">Стоимость изделий, материалов, опций</td>
+                        <td style="font-size: 10px; width: 75px;">СКИДКА%</td>
+                        <td style="font-size: 10px; width: 135px;">Стоимость со СКИДКОЙ</td>
+                        <td style="font-size: 10px; width: 110px;">Стоимость работ</td>
+                        <td style="font-size: 10px; width: 250px;">Полная стоимость, согласованная сторонами</td>
+                        <td rowspan="3" style="width: 150px; font-size: 10px; vertical-align: top; padding-top: 10px; padding-left: 2px;"> Кол-во изделий:_________шт.</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td id="discount"></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="border: none;"><div style="font-size: 8px; text-align: center;">Я, Покупатель, с перечнем и стоимостью материалов и
+                            работ, типом открывания и
+                            конфигурацией изделия, сроками и условиями работ ознакомлен и согласен. В чем и расписываюсь:</div>
+                    </div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="border: none; text-align: left;">
+                            <div style="margin-top: 7px;">
+                                <span>Продавец (ФИО)______________________________________/___________/</span>
+                                <span style="margin-left: 60px;">Покупатель (ФИО)____________________________________/___________/</span>
+                                <div style="margin-top: 5px; display: flex; justify-content: space-between;">
+                                    <span>Адрес:____________________________________________________________________________________________________________________</span>
+                                    <span>тел:_________________________________________</span>
+                                </div>
+                                <div style="margin-top: 5px; display: flex; justify-content: space-between;">
+                                    <span>ФИО:_____________________________________________________________________________________________________________________</span>
+                                    <span>тел:_________________________________________</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                
+            <div class="logo" style=" position: absolute; width: 150px; top: 30px; right: 0;">
+                <img src="./img/calculator/Logo.png" alt="Logotype" width="150px">
+            </div>
+
+        </header>
+        <main  style="margin-top: 10px;">
+            <div style="margin-top: 10px; margin-left: 10px; position: relative; ">
+                <img src="./img/calculator/measure-list.jpg" alt="Вид окна" width="450px">
+                <div id="width" style="position: absolute; bottom: 28px; left: 200px;"></div>
+                <div id="height" style="position: absolute; transform: rotate(90deg); left: 15px; top: 135px;"></div>
+                <div id="widthDoor" style="position: absolute; top: 95px; left: 200px;"></div>
+
+                <div style="position: absolute; top: -10px; right: 190px;"><span id="mountTop"></span> <span id="mountTopCount"></span></div>
+                <div style="position: absolute; bottom: 11px; left: -10px;"><span id="mountBottom"></span> <span id="mountBottomCount"></span></div>
+                <div style="position: absolute; top: 0px; left: 0px;"><span id="mountLeft"></span> <span id="mountLeftCount"></span></div>
+                <div style="position: absolute; bottom: 13px; right: 119px;"><span id="mountRight"></span> <span id="mountRightCount"></span></div>
+            </div>
+            <div class="table" style="width: 450px;">
+                <table style="text-align: center; vertical-align: middle; font-size: 8px;">
+                    <thead>
+                        <tr style="height:15px;">
+                            <th style="width: 100px;">Наименование</th>
+                            <th colspan="2">Материал</th>
+                            <th style="width:37px;">Ед.изм</th>
+                            <th>Кол-во</th>
+                            <th>Цвет</th>
+                            <th>Цена</th>
+                            <th style="width:60px;">Стоимость</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="height: 20px;">
+                            <td >Заполнение<br> проема изделия</td>
+                            <td colspan="2" id="materialArea"></td>
+                            <td>м.кв</td>
+                            <td id="amountArea"></td>
+                            <td>прозрачный</td>
+                            <td id="priceArea"></td>
+                            <td id="coastArea"></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td rowspan="2">Проем в изделии</td>
+                            <td colspan="2" id="materialDoorArea"></td>
+                            <td>м.кв</td>
+                            <td id="amountDoorArea"></td>
+                            <td>прозрачный</td>
+                            <td id="priceDoorArea"></td>
+                            <td id="coastDoorArea"></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="2">Молния</td>
+                            <td>м.п</td>
+                            <td id="lengthZipper"></td>
+                            <td></td>
+                            <td id="priceZipper"></td>
+                            <td id="coastZipper"></td>
+                        </tr>
+                        <tr style="height: 25px;">
+                            <td>Окантовка изделия</td>
+                            <td id="materialEdging"></td>
+                            <td style="width: 30px;" id="widthEdging"></td>
+                            <td>м.п</td>
+                            <td id="amountEdging"></td>
+                            <td id="colorEnging"></td>
+                            <td id="priceEdging"></td>
+                            <td id="coastEdging"></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td>Ремень для скручивания</td>
+                            <td colspan="2" id="materialBelts"></td>
+                            <td>шт.</td>
+                            <td id="amountBelts"></td>
+                            <td id="colorBelts"></td>
+                            <td id="priceBelts"></td>
+                            <td id="coastBelts"></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td rowspan="4">Крепеж</td>
+                            <td colspan="2" id="materialMountTop"></td>
+                            <td>компл.</td>
+                            <td id="amountMountTop"></td>
+                            <td id="colorMountTop"></td>
+                            <td id="priceMountTop"></td>
+                            <td id="coastMountTop"></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td colspan="2" id="materialMountRight"></td>
+                            <td>компл.</td>
+                            <td id="amountMountRight"></td>
+                            <td id="colorMountRight"></td>
+                            <td id="priceMountRight"></td>
+                            <td id="coastMountRight"></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td colspan="2" id="materialMountBottom"></td>
+                            <td>компл.</td>
+                            <td id="amountMountBottom"></td>
+                            <td id="colorMountBottom"></td>
+                            <td id="priceMountBottom"></td>
+                            <td id="coastMountBottom"></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td colspan="2" id="materialMountLeft"></td>
+                            <td>компл.</td>
+                            <td id="amountMountLeft"></td>
+                            <td id="colorMountLeft"></td>
+                            <td id="priceMountLeft"></td>
+                            <td id="coastMountLeft"></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td rowspan="6">Дополнительные элементы</td>
+                            <td colspan="2">брус 50х50</td>
+                            <td>м.п.</td>
+                            <td></td>
+                            <td></td>
+                            <td>400</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td colspan="2">брус 100х100</td>
+                            <td>м.п.</td>
+                            <td></td>
+                            <td></td>
+                            <td>500</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td colspan="2">брус 150х150 угол.</td>
+                            <td>м.п.</td>
+                            <td></td>
+                            <td></td>
+                            <td>800</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td colspan="2">метал. 50х50х3</td>
+                            <td>м.п.</td>
+                            <td></td>
+                            <td>черный</td>
+                            <td>1400</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td colspan="2">проф.труба 50</td>
+                            <td>м.п.</td>
+                            <td></td>
+                            <td>черный</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td colspan="2">утяжелитель из оцинковки</td>
+                            <td>м.п.</td>
+                            <td></td>
+                            <td></td>
+                            <td>2000</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Изделие не прямоугольник</td>
+                            <td>шт.</td>
+                            <td></td>
+                            <td></td>
+                            <td>2000</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">С обходом элемента проема (за каждый обход(вогнутый угол))</td>
+                            <td>шт.</td>
+                            <td></td>
+                            <td></td>
+                            <td>2000</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Заполнений проема в изделии более одного (пленка+материал и тп)</td>
+                            <td>шт.</td>
+                            <td></td>
+                            <td></td>
+                            <td>2000</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Требуется пришить доп. элементы и т.д.</td>
+                            <td>шт.</td>
+                            <td></td>
+                            <td></td>
+                            <td>2000</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="6"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="7" style="text-align: right;">ИТОГО</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="8">Стоимость работ</td>
+                        </tr>
+                        <tr style="height: 17px;">
+                            <td colspan="3">Наименование</td>
+                            <td>Ед. изм.</td>
+                            <td>Кол-во</td>
+                            <td></td>
+                            <td>Цена</td>
+                            <td>Стоимость</td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Монтаж на дерев. каркас </td>
+                            <td>м.кв. </td>
+                            <td></td>
+                            <td></td>
+                            <td>550</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Монтаж на мет/кирпич каркас</td>
+                            <td>м.кв. </td>
+                            <td></td>
+                            <td></td>
+                            <td>750</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Подготовка каркаса из бруса </td>
+                            <td>м.п.</td>
+                            <td></td>
+                            <td></td>
+                            <td>200</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Подготовка каркаса из металла </td>
+                            <td>м.п.</td>
+                            <td></td>
+                            <td></td>
+                            <td>300</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Нестандартный проем </td>
+                            <td>шт</td>
+                            <td></td>
+                            <td></td>
+                            <td>8000</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Доставка</td>
+                            <td>шт</td>
+                            <td id="deliveryAmount"></td>
+                            <td></td>
+                            <td id="deliveryPrice">2300</td>
+                            <td id="deliveryCoast"></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Доставка за МКАД</td>
+                            <td>км.</td>
+                            <td id="deliveryAmountKm"></td>
+                            <td></td>
+                            <td>50</td>
+                            <td id="deliveryCoastKm"></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="3">Выезд монтажников < 15 м.кв. </td> <td>раз</td>
+                            <td></td>
+                            <td></td>
+                            <td>1500</td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td colspan="7" style="text-align: right;">ИТОГО</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="grid"> 
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+</body>
+
+
+<script>
+    function createList(obj) {
+        document.querySelector('#width').textContent = obj.width
+        document.querySelector('#height').textContent = obj.height
+        document.querySelector('#widthDoor').textContent = obj.widthDoor
+
+        document.querySelector('#mountTop').textContent =  obj.top === 'Нет' ? '' : replaceStr(obj.top)
+        document.querySelector('#mountBottom').textContent =  obj.bottom === 'Нет' ? '' : replaceStr(obj.bottom)
+        document.querySelector('#mountLeft').textContent =  obj.left === 'Нет' ? '' : replaceStr(obj.left)
+        document.querySelector('#mountRight').textContent = obj.right === 'Нет' ? '' : replaceStr(obj.right)
+        document.querySelector('#mountTopCount').textContent = `(${obj.amountMountTop} шт.)`
+        document.querySelector('#mountBottomCount').textContent = `(${obj.amountMountBottom} шт.)`
+        document.querySelector('#mountLeftCount').textContent = `(${obj.amountMountLeft} шт.)`
+        document.querySelector('#mountRightCount').textContent = `(${obj.amountMountRight} шт.)`
+
+        document.querySelector('#materialArea').textContent = obj.area || ''
+        document.querySelector('#amountArea').textContent = (obj.width * obj.height / 1000000).toFixed(2) || ''
+        document.querySelector('#priceArea').textContent = obj.priceArea || ''
+        document.querySelector('#coastArea').textContent = obj.coastArea || ''
+        document.querySelector('#lengthZipper').textContent = obj.lengthZipper || ''
+        document.querySelector('#priceZipper').textContent = obj.priceZipper || ''
+        
+        document.querySelector('#materialDoorArea').textContent = obj.fillingDoor || ''
+        document.querySelector('#amountDoorArea').textContent = obj.areaDoor || ''
+        document.querySelector('#priceDoorArea').textContent = obj.priceFillingDoor || ''
+        document.querySelector('#coastDoorArea').textContent = obj.priceDoor || ''
+        
+        document.querySelector('#coastZipper').textContent = obj.coastZipper || ''
+        document.querySelector('#materialEdging').textContent = obj.materialEdging || ''
+        document.querySelector('#widthEdging').textContent = obj.widthEdging || ''
+        document.querySelector('#amountEdging').textContent = obj.amountEdging || ''
+        document.querySelector('#colorEnging').textContent = obj.colorEnging || ''
+        document.querySelector('#priceEdging').textContent = obj.priceEdging || ''
+        document.querySelector('#coastEdging').textContent = obj.coastEdging || ''
+        document.querySelector('#materialBelts').textContent = obj.materialBelts || ''
+        document.querySelector('#amountBelts').textContent = obj.amountBelts || ''
+        document.querySelector('#colorBelts').textContent = obj.colorBelts || ''
+        document.querySelector('#priceBelts').textContent = obj.priceBelts || ''
+        document.querySelector('#coastBelts').textContent = obj.coastBelts || ''
+        document.querySelector('#materialMountTop').textContent = obj.top || ''
+        document.querySelector('#amountMountTop').textContent = obj.amountMountTop || ''
+        document.querySelector('#colorMountTop').textContent = obj.colorMountTop || ''
+        document.querySelector('#priceMountTop').textContent = obj.priceMountTop || ''
+        document.querySelector('#coastMountTop').textContent = obj.coastMountTop || ''
+        document.querySelector('#materialMountRight').textContent = obj.right 
+        document.querySelector('#amountMountRight').textContent = obj.amountMountRight || ''
+        document.querySelector('#colorMountRight').textContent = obj.colorMountRight || ''
+        document.querySelector('#priceMountRight').textContent = obj.priceMountRight || ''
+        document.querySelector('#coastMountRight').textContent = obj.coastMountRight || ''
+        document.querySelector('#materialMountBottom').textContent = obj.bottom || ''
+        document.querySelector('#amountMountBottom').textContent = obj.amountMountBottom || ''
+        document.querySelector('#colorMountBottom').textContent = obj.colorMountBottom || ''
+        document.querySelector('#priceMountBottom').textContent = obj.priceMountBottom || ''
+        document.querySelector('#coastMountBottom').textContent = obj.coastMountBottom || ''
+        document.querySelector('#materialMountLeft').textContent = obj.left || ''
+        document.querySelector('#amountMountLeft').textContent = obj.amountMountLeft || ''
+        document.querySelector('#colorMountLeft').textContent = obj.colorMountLeft || ''
+        document.querySelector('#priceMountLeft').textContent = obj.priceMountLeft || ''
+        document.querySelector('#coastMountLeft').textContent = obj.coastMountLeft || ''
+
+
+        document.querySelector('#discount').textContent = obj.discount ? obj.discount + '%' : ''
+        document.querySelector('#deliveryAmount').textContent = obj.delivery ? 1 : ''
+        document.querySelector('#deliveryPrice').textContent = obj.deliveryCoast
+        document.querySelector('#deliveryCoast').textContent = obj.deliveryCoast
+        document.querySelector('#deliveryAmountKm').textContent = obj.deliveryAmountKm 
+        document.querySelector('#deliveryCoastKm').textContent = obj.deliveryCoastKm 
+
+    }
+    createList(window.calculateObj)
+
+
+    function replaceStr(str) {
+        return str.replace(/\(.+\)/, '')
+    }
+</script>
+</html>
